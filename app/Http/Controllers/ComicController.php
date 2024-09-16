@@ -15,7 +15,7 @@ class ComicController extends Controller
     {
         //qui andrà la view della tabella con le info dei fumetti
         $comics = Comic::All();
-        view('comics.index');
+        return view('comics.index', compact('comics'));
     }
 
     /**
