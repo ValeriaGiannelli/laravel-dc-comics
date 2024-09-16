@@ -4,6 +4,8 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 
+use App\Models\Comic;
+
 class ComicController extends Controller
 {
     /**
@@ -11,7 +13,9 @@ class ComicController extends Controller
      */
     public function index()
     {
-        //
+        //qui andrà la view della tabella con le info dei fumetti
+        $comics = Comic::All();
+        view('comics.index');
     }
 
     /**
