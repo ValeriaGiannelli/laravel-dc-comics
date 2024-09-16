@@ -4,6 +4,13 @@
 @section('content')
 <div class="container my-5">
     <h1>{{$comic->title}}</h1>
+    <p>Serie: {{$comic->series}}</p>
+    <div class="row">
+        <div class="col">
+            <img class="icon img-fluid" src="{{$comic->thumb}}" alt="{{$comic->title}}">
+        </div>
+    </div>
+
     <p>
         {{$comic->description}}
     </p>
