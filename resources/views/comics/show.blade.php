@@ -7,6 +7,12 @@
     <p>
         {{$comic->description}}
     </p>
+
+    <a href="{{route('comics.index')}}">
+        <button class="btn btn-primary">
+            Torna indietro
+        </button>
+    </a>
 </div>
 
 @endsection
