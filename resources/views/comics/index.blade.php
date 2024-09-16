@@ -16,7 +16,7 @@
                 <th scope="col">Serie</th>
                 <th scope="col">Tipo</th>
                 <th scope="col">Data</th>
-                <th scope="col">Descrizione</th>
+                <th scope="col">Dettaglio</th>
               </tr>
             </thead>
             <tbody>
@@ -29,7 +29,7 @@
                             <td class="col-auto">{{$comic->series}}</td>
                             <td class="col-auto">{{$comic->type}}</td>
                             <td class="col-2">{{($comic->sale_date)->format('d-m-Y')}}</td>
-                            <td class="col-2">{{$comic->description}}</td>
+                            <td class="col-auto"><a href="{{route('comics.show')}}"><i class="fa-regular fa-eye"></i></a></td>
                     </tr>
                 @endforeach
 
