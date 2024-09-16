@@ -5,6 +5,9 @@ namespace Database\Seeders;
 use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
+// importo helper per slug
+use App\Functions\Helper;
+
 use App\Models\Comic;
 
 // importo str
@@ -29,35 +32,10 @@ class ComicsTableSeeder extends Seeder
             $new_comic->series = $comic['series'];
             $new_comic->sale_date = $comic['sale_date'];
             $new_comic->type = $comic['type'];
-            $new_comic->slug = $this->generateSlug($new_comic->title);
+            $new_comic->slug = Helper::generateSlug($new_comic->title, Comic::class);
             // dump($new_comic);
             $new_comic->save();
         }
     }
 
-        // funzione per lo slug
-        private function generateSlug($string){
-            // variabile che prenda la stringa e sostituisca gli spazi col trattino
-            $slug = Str::slug($string, '-');
-
-            // variabile aggiuntiva per il ciclo while
-            $original_slug = $slug;
-
-            // se trovo uno slug esistente $exists non sarà null
-            $exists = Comic::where('slug', $slug)->first();
-
-            // inizializzo un contatore
-            $c = 1;
-            // queso ciclo partirà solo se lo slug non è null, quindi c'è
-            while($exists){
-                // concatena il contatore
-                $slug = $original_slug . '-' . $c;
-                // ricontrolla che anche questo slug non esiste
-                $exists = Comic::where('slug', $slug)->first();
-                // se esiste aumenta il contatore di 1
-                $c++;
-            }
-
-            return $slug;
-        }
 }

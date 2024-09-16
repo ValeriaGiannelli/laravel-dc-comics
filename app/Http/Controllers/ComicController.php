@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 
 use App\Models\Comic;
 
+use App\Functions\Helper;
+
 class ComicController extends Controller
 {
     /**
@@ -42,6 +44,8 @@ class ComicController extends Controller
         $new_comic->series = $data['series'];
         $new_comic->sale_date = $data['sale_date'];
         $new_comic->type = $data['type'];
+        $new_comic->slug = Helper::generateSlug($data['title'], Comic::class);
+        $new_comic->save();
 
 
         return redirect()->route('comics.show', $new_comic->id);
