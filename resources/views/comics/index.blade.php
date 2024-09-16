@@ -29,7 +29,7 @@
                             <td class="col-auto">{{$comic->series}}</td>
                             <td class="col-auto">{{$comic->type}}</td>
                             <td class="col-2">{{($comic->sale_date)->format('d-m-Y')}}</td>
-                            <td class="col-auto"><a href="{{route('comics.show')}}"><i class="fa-regular fa-eye"></i></a></td>
+                            <td class="col-auto"><a href="{{route('comics.show', $comic)}}"><i class="fa-regular fa-eye"></i></a></td>
                     </tr>
                 @endforeach
 
