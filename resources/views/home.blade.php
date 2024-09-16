@@ -7,10 +7,9 @@
 
 @section('content')
 <div class="container my-5">
-    <h1>{{ $title }}</h1>
-    <img src="{{ Vite::asset('resources/img/colibri.jpg') }}" alt="" class="img-fluid">
+    <h1>Home page</h1>
     <p>
-        {{ $text }}
+       Benvenuti nella Dashboard dei Fumetti
     </p>
 </div>
 
