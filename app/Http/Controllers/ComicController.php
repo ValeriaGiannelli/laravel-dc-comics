@@ -23,7 +23,8 @@ class ComicController extends Controller
      */
     public function create()
     {
-        //
+        //form per creare il nuovo fumetto
+        return view('comics.create');
     }
 
     /**
