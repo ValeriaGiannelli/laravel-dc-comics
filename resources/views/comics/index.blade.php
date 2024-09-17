@@ -30,15 +30,18 @@
                             <td class="col-auto">{{$comic->type}}</td>
                             <td class="col-auto">{{($comic->sale_date)->format('d-m-Y')}}</td>
                             <td class="col-auto">
-                                <a class="btn btn-succes" href="{{route('comics.show', $comic)}}">
+                                <a class="btn btn-primary" href="{{route('comics.show', $comic)}}">
                                     <i class="fa-solid fa-eye"></i>
                                 </a>
                                 <a class="btn btn-warning" href="{{route('comics.edit', $comic)}}">
                                     <i class="fa-solid fa-pencil"></i>
                                 </a>
-                                {{-- <a class="btn btn-danger" href="{{route('comics.show', $comic)}}">
-                                    <i class="fa-solid fa-trash"></i>
-                                </a> --}}
+                                <form class="d-inline" action="{{route('comics.destroy', $comic)}}" method="POST">
+                                    @csrf
+                                    @method('DELETE')
+                                    <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
+                                </form>
+
                             </td>
                     </tr>
                 @endforeach
