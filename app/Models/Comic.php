@@ -12,4 +12,15 @@ class Comic extends Model
     protected $casts = [
         'sale_date' => 'datetime',
     ];
+
+    protected $fillable = [
+        'title',
+        'description',
+        'thumb',
+        'price',
+        'series',
+        'sale_date',
+        'type',
+        'slug'
+    ];
 }
