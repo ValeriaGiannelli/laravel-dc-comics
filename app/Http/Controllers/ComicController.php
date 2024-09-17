@@ -105,6 +105,10 @@ class ComicController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        //Prendo l'elelemtno all'indice corrispondente
+        $comic = Comic::find($id);
+        $comic->delete();
+
+        return redirect()->route('comics.index');
     }
 }
