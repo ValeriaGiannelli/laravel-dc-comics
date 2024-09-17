@@ -67,7 +67,13 @@ class ComicController extends Controller
      */
     public function edit(string $id)
     {
-        //
+        //qui modifico l'elemento
+        // prendo l'elemento
+        $comic = Comic::find($id);
+
+        // lo devo mandare ad un form compilato dei suoi elementi
+        return view('comics.edit', compact('comic'));
+
     }
 
     /**
