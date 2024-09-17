@@ -3,6 +3,17 @@
 
 @section('content')
 <div class="container my-5">
+    <a href="{{route('comics.index')}}">
+        <button class="btn btn-primary">
+            Torna indietro
+        </button>
+    </a>
+
+    <a href="{{route('comics.edit', $comic)}}">
+        <button class="btn btn-warning">
+            Modifica
+        </button>
+    </a>
     <h1>{{$comic->title}}</h1>
     <p>Serie: {{$comic->series}}</p>
     <div class="row">
@@ -15,11 +26,6 @@
         {{$comic->description}}
     </p>
 
-    <a href="{{route('comics.index')}}">
-        <button class="btn btn-primary">
-            Torna indietro
-        </button>
-    </a>
 </div>
 
 @endsection
