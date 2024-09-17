@@ -28,8 +28,18 @@
                             <td class="col-auto">{{$comic->price}}</td>
                             <td class="col-auto">{{$comic->series}}</td>
                             <td class="col-auto">{{$comic->type}}</td>
-                            <td class="col-2">{{($comic->sale_date)->format('d-m-Y')}}</td>
-                            <td class="col-auto"><a href="{{route('comics.show', $comic)}}"><i class="fa-regular fa-eye"></i></a></td>
+                            <td class="col-auto">{{($comic->sale_date)->format('d-m-Y')}}</td>
+                            <td class="col-auto">
+                                <a class="btn btn-succes" href="{{route('comics.show', $comic)}}">
+                                    <i class="fa-solid fa-eye"></i>
+                                </a>
+                                <a class="btn btn-warning" href="{{route('comics.edit', $comic)}}">
+                                    <i class="fa-solid fa-pencil"></i>
+                                </a>
+                                {{-- <a class="btn btn-danger" href="{{route('comics.show', $comic)}}">
+                                    <i class="fa-solid fa-trash"></i>
+                                </a> --}}
+                            </td>
                     </tr>
                 @endforeach
 
