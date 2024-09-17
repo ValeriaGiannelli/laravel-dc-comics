@@ -36,11 +36,8 @@
                                 <a class="btn btn-warning" href="{{route('comics.edit', $comic)}}">
                                     <i class="fa-solid fa-pencil"></i>
                                 </a>
-                                <form class="d-inline" action="{{route('comics.destroy', $comic)}}" method="POST" onsubmit="return confirm('Sei sicuro di voler eliminare il fumetto: {{$comic->title}}?')">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit" class="btn btn-danger"><i class="fa-solid fa-trash"></i></button>
-                                </form>
+
+                                @include('partials.formDelete')
 
                             </td>
                     </tr>

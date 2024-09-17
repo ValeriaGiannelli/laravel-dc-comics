@@ -14,6 +14,9 @@
             Modifica
         </button>
     </a>
+
+    @include('partials.formDelete')
+
     <h1>{{$comic->title}}</h1>
     <p>Serie: {{$comic->series}}</p>
     <div class="row">
