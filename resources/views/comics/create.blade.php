@@ -5,11 +5,26 @@
 
 @section('content')
 <div class="container my-5">
+
+    {{-- se ci sono gli errori stampa un messaggi con gli errori --}}
+    @if($errors->any())
+        <div class="alert alert-danger" role="alert">
+            <ul>
+                @foreach($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        </div>
+
+    @endif
+
     <form class="row g-3" action="{{route('comics.store')}}" method="POST">
         @csrf
         <div class="col-md-6">
-          <label for="title" class="form-label">Titolo del fumetto</label>
+          <label for="title" class="form-label">Titolo del fumetto (*)</label>
           <input type="text" class="form-control" id="title" name="title" placeholder="Scrivi il titolo del fumetto">
+            {{-- se esiste l'errore title stampa un messaggio anche sotto l'input --}}
+
         </div>
         <div class="col-md-6">
             <label for="thumb" class="form-label">URL immagine</label>
