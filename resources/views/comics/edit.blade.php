@@ -64,7 +64,7 @@
         </div>
         <div class="col-md-6">
             <label for="sale_date" class="form-label">Data di acquisto</label>
-            <input type="text" class="form-control @error('sale_date') is-invalid @enderror" id="sale_date" name="sale_date" placeholder="Inserisci la data di acquisto" value="{{old('sale_date', $comic->sale_date)}}">
+            <input type="text" class="form-control @error('sale_date') is-invalid @enderror" id="sale_date" name="sale_date" placeholder="Inserisci la data di acquisto" value="{{old('sale_date', $comic->sale_date->format('Y-m-d'))}}">
 
             @error('sale_date')
                 <small class="text-danger"> {{$message}} </small>
@@ -73,7 +73,7 @@
 
         <div class="col-12">
             <label for="description" class="form-label">Trama</label>
-            <textarea class="form-control" name="description" id="description" cols="30" rows="10" placeholder="Descrizione della trama"></textarea>
+            <textarea class="form-control" name="description" id="description" cols="30" rows="10" placeholder="Descrizione della trama">value="{{old('type', $comic->description)}}"</textarea>
 
         </div>
 
