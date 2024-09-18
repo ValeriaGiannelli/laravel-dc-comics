@@ -22,34 +22,58 @@
         @csrf
         <div class="col-md-6">
           <label for="title" class="form-label">Titolo del fumetto (*)</label>
-          <input type="text" class="form-control" id="title" name="title" placeholder="Scrivi il titolo del fumetto">
+          <input type="text" class="form-control @error('title') is-invalid @enderror" id="title" name="title" placeholder="Scrivi il titolo del fumetto">
             {{-- se esiste l'errore title stampa un messaggio anche sotto l'input --}}
+            @error('title')
+                <small class="text-danger"> {{$message}} </small>
+            @enderror
 
         </div>
         <div class="col-md-6">
             <label for="thumb" class="form-label">URL immagine</label>
-            <input type="text" class="form-control" id="thumb" name="thumb" placeholder="Inserisci l'URL dell'immagine">
+            <input type="text" class="form-control @error('thumb') is-invalid @enderror" id="thumb" name="thumb" placeholder="Inserisci l'URL dell'immagine">
+
+            @error('thumb')
+            <small class="text-danger"> {{$message}} </small>
+        @enderror
         </div>
         <div class="col-md-6">
             <label for="price" class="form-label">Prezzo</label>
-            <input type="text" class="form-control" id="price" name="price" placeholder="Inserisci il prezzo">
+            <input type="text" class="form-control @error('price') is-invalid @enderror" id="price" name="price" placeholder="Inserisci il prezzo">
+
+            @error('price')
+                <small class="text-danger"> {{$message}} </small>
+            @enderror
         </div>
         <div class="col-md-6">
             <label for="series" class="form-label">Serie</label>
-            <input type="text" class="form-control" id="series" name="series" placeholder="Inserisci la serie">
+            <input type="text" class="form-control @error('series') is-invalid @enderror" id="series" name="series" placeholder="Inserisci la serie">
+
+            @error('series')
+                <small class="text-danger"> {{$message}} </small>
+            @enderror
         </div>
         <div class="col-md-6">
             <label for="type" class="form-label">Tipo</label>
-            <input type="text" class="form-control" id="type" name="type" placeholder="Inserisci la tipologia del fumetto">
+            <input type="text" class="form-control @error('type') is-invalid @enderror" id="type" name="type" placeholder="Inserisci la tipologia del fumetto">
+
+            @error('type')
+                <small class="text-danger"> {{$message}} </small>
+            @enderror
         </div>
         <div class="col-md-6">
             <label for="sale_date" class="form-label">Data di acquisto</label>
-            <input type="text" class="form-control" id="sale_date" name="sale_date" placeholder="Inserisci la data di acquisto">
+            <input type="text" class="form-control @error('sale_date') is-invalid @enderror" id="sale_date" name="sale_date" placeholder="Inserisci la data di acquisto">
+
+            @error('sale_date')
+                <small class="text-danger"> {{$message}} </small>
+            @enderror
         </div>
 
         <div class="col-12">
             <label for="description" class="form-label">Trama</label>
             <textarea class="form-control" name="description" id="description" cols="30" rows="10" placeholder="Descrizione della trama"></textarea>
+
         </div>
 
         <div class="col-12">
