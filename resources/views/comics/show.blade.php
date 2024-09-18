@@ -3,6 +3,13 @@
 
 @section('content')
 <div class="container my-5">
+    @if (session('edited'))
+        <div class="alert alert-success">
+            {{session('edited')}}
+        </div>
+    @endif
+
+
     <a href="{{route('comics.index')}}">
         <button class="btn btn-primary">
             Torna indietro

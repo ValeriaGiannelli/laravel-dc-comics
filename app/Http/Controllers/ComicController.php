@@ -129,7 +129,7 @@ class ComicController extends Controller
         // faccio update di quel fumetto
         $comic->update($data);
 
-        return redirect()->route('comics.show', $comic);
+        return redirect()->route('comics.show', $comic)->with('edited', 'Il fumetto è stato modificato correttamente');
     }
 
     /**
